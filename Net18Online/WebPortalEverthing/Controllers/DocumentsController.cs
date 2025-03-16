@@ -20,7 +20,8 @@ namespace WebPortalEverthing.Controllers
 
         public IActionResult Index()
         {
-            var documents = _documentRepository.GetAll();
+            var documents = _documentRepository.GetAll()
+                .OrderBy(x => x.Title);
 
             var viewModel = new DocumentIndexViewModel()
             { 
@@ -29,6 +30,7 @@ namespace WebPortalEverthing.Controllers
                     Id = document.Id,
                     Title = document.Title,
                     OriginalFileName = document.OriginalFileName,
+                    Url = document.StorageFileName,
                     Length = document.Length
                 })
                 .ToList()

@@ -1,4 +1,5 @@
-﻿@using WebPortalEverthing.Models.Surveys
+﻿@using WebPortalEverthing.Localizations
+@using WebPortalEverthing.Models.Surveys
 
 @{
     Layout = "~/Views/Shared/_LayoutSurveys.cshtml";
@@ -7,15 +8,15 @@
 @model DocumentIndexViewModel
 
 <div class="main-content-title">
-    Документы
+    @Surveys.Documents_Index_Name
 </div>
 <div class="my-2">
-    <a class="btn btn-sm btn-success" asp-controller="Documents" asp-action="Create">Добавить</a>
+    <a class="btn btn-sm btn-success" asp-controller="Documents" asp-action="Create">@Surveys.Add</a>
 </div>
 <div class="document-page">
     @if (Model.Documents.Any())
     {
-        <table class="table table-sm">
+        <table class="table table-sm table table-sm table-bordered table-striped">
             <thead>
                 <tr>
                     <th scope="col">Название</th>
@@ -32,7 +33,8 @@
                         <td>@document.OriginalFileName</td>
                         <td>@document.Length</td>
                         <td>
-                            <a href="/Documents/Delete?id=@document.Id">Удалить</a>
+                            <a href="/files/@document.Url">@Surveys.Open</a>
+                            <a href="/Documents/Delete?id=@document.Id">@Surveys.Delete</a>
                         </td>
                     </tr>
                 }
@@ -41,7 +43,7 @@
     else
     {
         <div class="alert alert-warning" role="alert">
-            <span>Документов нет</span>
+            <span>@Surveys.Documents_Index_Table_Empty</span>
         </div>
     }
 </div>

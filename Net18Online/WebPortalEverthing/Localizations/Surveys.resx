@@ -189,4 +189,19 @@
   <data name="Surveys_Profile_Name" xml:space="preserve">
     <value>Профиль пользователя</value>
   </data>
+  <data name="Documents_Index_Name" xml:space="preserve">
+    <value>Документы</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="Documents_Index_Table_Empty" xml:space="preserve">
+    <value>Документов нет</value>
+  </data>
+  <data name="Documents_Create_Name" xml:space="preserve">
+    <value>Новый документ</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
 </root>

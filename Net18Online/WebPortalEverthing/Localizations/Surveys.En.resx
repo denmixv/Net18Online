@@ -192,4 +192,19 @@
   <data name="Surveys_Profile_Name" xml:space="preserve">
     <value>User profile</value>
   </data>
+  <data name="Documents_Index_Name" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Documents_Index_Table_Empty" xml:space="preserve">
+    <value>No documents</value>
+  </data>
+  <data name="Documents_Create_Name" xml:space="preserve">
+    <value>New document</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
 </root>

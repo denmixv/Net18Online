@@ -61,11 +61,47 @@ namespace WebPortalEverthing.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Добавить.
+        /// </summary>
+        public static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Удалить.
         /// </summary>
         public static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Новый документ.
+        /// </summary>
+        public static string Documents_Create_Name {
+            get {
+                return ResourceManager.GetString("Documents_Create_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Документы.
+        /// </summary>
+        public static string Documents_Index_Name {
+            get {
+                return ResourceManager.GetString("Documents_Index_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Документов нет.
+        /// </summary>
+        public static string Documents_Index_Table_Empty {
+            get {
+                return ResourceManager.GetString("Documents_Index_Table_Empty", resourceCulture);
             }
         }
         
@@ -84,6 +120,15 @@ namespace WebPortalEverthing.Localizations {
         public static string Login_Name {
             get {
                 return ResourceManager.GetString("Login_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Открыть.
+        /// </summary>
+        public static string Open {
+            get {
+                return ResourceManager.GetString("Open", resourceCulture);
             }
         }
         
