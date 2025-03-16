@@ -207,4 +207,25 @@
   <data name="TakingSurvey_Index_Table_Empty" xml:space="preserve">
     <value>Вопросов нет</value>
   </data>
+  <data name="Surveys_SurveysAll_Name" xml:space="preserve">
+    <value>Шаблоны опросов</value>
+  </data>
+  <data name="Surveys_SurveysAll_ExpandGroups" xml:space="preserve">
+    <value>Разворачивать содержимое всех групп</value>
+  </data>
+  <data name="Surveys_SurveysAll_NewSurvey" xml:space="preserve">
+    <value>Создать новый опрос</value>
+  </data>
+  <data name="SurveysAdmin_Users_Name" xml:space="preserve">
+    <value>Пользователи</value>
+  </data>
+  <data name="SurveysAdmin_Users_Roles" xml:space="preserve">
+    <value>Роли</value>
+  </data>
+  <data name="Section_Under_Development" xml:space="preserve">
+    <value>Раздел в разработке</value>
+  </data>
+  <data name="SurveyTests_Index_Name" xml:space="preserve">
+    <value>Тесты</value>
+  </data>
 </root>

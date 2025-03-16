@@ -151,6 +151,15 @@ namespace WebPortalEverthing.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Раздел в разработке.
+        /// </summary>
+        public static string Section_Under_Development {
+            get {
+                return ResourceManager.GetString("Section_Under_Development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Наименование группы.
         /// </summary>
         public static string SurveyGroup_Create_GroupName {
@@ -313,11 +322,65 @@ namespace WebPortalEverthing.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Разворачивать содержимое всех групп.
+        /// </summary>
+        public static string Surveys_SurveysAll_ExpandGroups {
+            get {
+                return ResourceManager.GetString("Surveys_SurveysAll_ExpandGroups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Шаблоны опросов.
+        /// </summary>
+        public static string Surveys_SurveysAll_Name {
+            get {
+                return ResourceManager.GetString("Surveys_SurveysAll_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Создать новый опрос.
+        /// </summary>
+        public static string Surveys_SurveysAll_NewSurvey {
+            get {
+                return ResourceManager.GetString("Surveys_SurveysAll_NewSurvey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Пользователи.
         /// </summary>
         public static string Surveys_Users {
             get {
                 return ResourceManager.GetString("Surveys_Users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Пользователи.
+        /// </summary>
+        public static string SurveysAdmin_Users_Name {
+            get {
+                return ResourceManager.GetString("SurveysAdmin_Users_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Роли.
+        /// </summary>
+        public static string SurveysAdmin_Users_Roles {
+            get {
+                return ResourceManager.GetString("SurveysAdmin_Users_Roles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Тесты.
+        /// </summary>
+        public static string SurveyTests_Index_Name {
+            get {
+                return ResourceManager.GetString("SurveyTests_Index_Name", resourceCulture);
             }
         }
         

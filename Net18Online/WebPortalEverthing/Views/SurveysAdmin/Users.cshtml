@@ -1,0 +1,49 @@
+﻿@using Enums.Users
+@using WebPortalEverthing.Localizations
+@using WebPortalEverthing.Models.Admin
+@model AdminUserViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutSurveys.cshtml";
+}
+
+<div class="main-content-title">
+    <span>@Surveys.SurveysAdmin_Users_Name</span>
+</div>
+
+<div class="list-group">
+    @foreach (var user in Model.Users)
+    {
+        <div class="list-group-item">
+            <div class="d-flex justify-content-between">
+                <h1 class="list-group-item-heading mb-2">@user.Name</h1>
+                <a class="btn btn-sm btn-danger" href="/SurveysAdmin/DeleteUser?id=@user.Id" data-username="@user.Name">@Surveys.Delete</a>
+            </div>
+
+            <div>
+                @Surveys.SurveysAdmin_Users_Roles:
+                @foreach (var role in user.Roles)
+                {
+                    <span class="role mx-1">@role</span>
+                }
+            </div>
+
+            <form action="/SurveysAdmin/UpdateRole">
+                @Html.Hidden("userId", user.Id)
+
+                <div>
+                    @foreach (var role in Model.Roles)
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="@role.Value" id="@role.Text" name="role" checked="@(user.Role.HasFlag((Role)Enum.Parse(typeof(Role), role.Value)))">
+                            <label class="form-check-label" for="@role.Text">
+                                @role.Text
+                            </label>
+                        </div>
+                    }
+                    <button class="btn btn-sm btn-success" type="submit">@Surveys.Save</button>
+                </div>
+            </form>
+        </div>
+    }
+</div>

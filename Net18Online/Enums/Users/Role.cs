@@ -9,5 +9,6 @@
         AnimeAuthor = 8,    // x 0000 1000
         SurveysCreatorOrEditor = 16,
         Observer = 32,
+        SurveysDataAnalyst = 64
     }
 }

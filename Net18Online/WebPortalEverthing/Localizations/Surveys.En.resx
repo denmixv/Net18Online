@@ -139,7 +139,7 @@
     <value>survey and test service</value>
   </data>
   <data name="Surveys_Menu_Survey_Groups" xml:space="preserve">
-    <value>Survey Groups</value>
+    <value>Survey groups</value>
   </data>
   <data name="Surveys_Menu_Surveys" xml:space="preserve">
     <value>Surveys</value>
@@ -157,7 +157,7 @@
     <value>Home page</value>
   </data>
   <data name="SurveyGroup_Index_Name" xml:space="preserve">
-    <value>Survey Groups</value>
+    <value>Survey groups</value>
   </data>
   <data name="SurveyGroup_Index_Create" xml:space="preserve">
     <value>Create new group</value>
@@ -209,5 +209,26 @@
   </data>
   <data name="TakingSurvey_Index_Table_Empty" xml:space="preserve">
     <value>No questions</value>
+  </data>
+  <data name="Surveys_SurveysAll_Name" xml:space="preserve">
+    <value>Survey templates</value>
+  </data>
+  <data name="Surveys_SurveysAll_ExpandGroups" xml:space="preserve">
+    <value>Expand contents of all groups</value>
+  </data>
+  <data name="Surveys_SurveysAll_NewSurvey" xml:space="preserve">
+    <value>Create new survey</value>
+  </data>
+  <data name="SurveysAdmin_Users_Name" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="SurveysAdmin_Users_Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="Section_Under_Development" xml:space="preserve">
+    <value>Section under development</value>
+  </data>
+  <data name="SurveyTests_Index_Name" xml:space="preserve">
+    <value>Tests</value>
   </data>
 </root>

@@ -1,4 +1,5 @@
-﻿@using WebPortalEverthing.Models.Surveys
+﻿@using WebPortalEverthing.Localizations
+@using WebPortalEverthing.Models.Surveys
 
 @model SurveysAllViewModel
 
@@ -11,12 +12,12 @@
 }
 
 <div class="main-content-title">
-    <span>Шаблоны опросов</span>
+    <span>@Surveys.Surveys_SurveysAll_Name</span>
 </div>
 <div>
     <div class="form-check form-switch">
         <input class="check-expand-groups form-check-input" type="checkbox" checked="@Model.IsExpandGroups">
-        <label class="form-check-label">Разворачивать содержимое всех групп</label>
+        <label class="form-check-label">@Surveys.Surveys_SurveysAll_ExpandGroups</label>
     </div>
 </div>
 @foreach (var surveyGroup in Model.SurveyGroups)
@@ -34,7 +35,7 @@
                 <div class="actions">
                     @if (surveyGroup.IsAllowSurveyCreation)
                     {
-                        <a href="Create?idGroup=@surveyGroup.Id">Создать новый опрос</a>
+                        <a href="Create?idGroup=@surveyGroup.Id">@Surveys.Surveys_SurveysAll_NewSurvey</a>
                     }
                 </div>
             </div>

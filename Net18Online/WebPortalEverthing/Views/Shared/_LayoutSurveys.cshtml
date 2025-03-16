@@ -62,10 +62,7 @@
                     @if (AuthService.IsAdmin())
                     {
                         <li class="nav-item m-2">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Users">@Surveys.Surveys_Users</a>
-                        </li>
-                        <li class="nav-item m-2">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Notification" asp-action="Notify">@Surveys.Surveys_Notification</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="SurveysAdmin" asp-action="Users">@Surveys.Surveys_Users</a>
                         </li>
                         <li class="vertical m-2"></li>
                     }
@@ -102,8 +99,11 @@
             <ul>
                 <li><a class="button" href="/SurveyGroup">@Surveys.Surveys_Menu_Survey_Groups</a></li>
                 <li><a class="button" href="/Surveys/SurveysAll">@Surveys.Surveys_Menu_Surveys</a></li>
-                <li><a class="button" href="#">@Surveys.Surveys_Menu_Tests</a></li>
-                <li><a class="button" href="#">@Surveys.Surveys_Menu_Statistics</a></li>
+                <li><a class="button" href="/SurveyTests">@Surveys.Surveys_Menu_Tests</a></li>
+                @if (AuthService.HasRole(Role.SurveysDataAnalyst))
+                {
+                    <li><a class="button" href="#">@Surveys.Surveys_Menu_Statistics</a></li>
+                }
                 @if (AuthService.IsAuthenticated())
                 {
                     <li><a class="button" href="/Documents">@Surveys.Surveys_Menu_Documents</a></li>
