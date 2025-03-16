@@ -81,5 +81,45 @@ namespace WebPortalEverthing.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var group = _surveyGroupRepository.Get(id);
+            var viewModel = new SurveyGroupCreateViewModel()
+            {
+                Id = group.Id,
+                Title = group.Title
+            };
+
+            return View(nameof(Create), viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(SurveyGroupCreateViewModel viewModel)
+        {
+            if (!_surveyGroupRepository.HasUniqueTitle(viewModel.Title, viewModel.Id))
+            {
+                ModelState.AddModelError(
+                    nameof(SurveyGroupCreateViewModel.Title),
+                    "Группа опросов с таким названием уже существует");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View(nameof(Create), viewModel);
+            }
+
+            _surveyGroupRepository.UpdateTitle(viewModel.Id, viewModel.Title);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public ActionResult Delete(int id)
+        {
+            _surveyGroupRepository.Delete(id);
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

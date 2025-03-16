@@ -6,7 +6,8 @@ namespace Everything.Data.Interface.Repositories
         where T : ISurveyGroupData
     {
         IEnumerable<T> GetAllWithСreatorUsers();
-        bool HasUniqueTitle(string title);
+        bool HasUniqueTitle(string title, int id = 0);
         void CreateSurveyGroup(string title, int? userId);
+        void UpdateTitle(int id, string value);
     }
 }

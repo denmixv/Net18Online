@@ -23,18 +23,21 @@ namespace Everything.Data.Repositories.Surveys
 
         public void UpdateTitle(int id, string newTitle)
         {
-            var surveyGroup = _webDbContext
-                .SurveyGroups
-                .First(x => x.Id == id);
+            var surveyGroup = Get(id);
 
             surveyGroup.Title = newTitle;
 
             _webDbContext.SaveChanges();
         }
 
-        public bool HasUniqueTitle(string title)
+        public bool HasUniqueTitle(string title, int id = 0)
         {
-            return !_dbSet.Any(x => x.Title == title);
+            if (id == 0)
+            {
+                return !_dbSet.Any(x => x.Title == title);
+            }
+
+            return !_dbSet.Any(x => x.Title == title && x.Id != id);
         }
 
         public void CreateSurveyGroup(string title, int? userId)

@@ -11,14 +11,10 @@
     <span>@Surveys.SurveyGroup_Create_Name</span>
 </div>
 <form class="new-survey-group" method="post">
-    <div>
-        <label>
-            @Surveys.SurveyGroup_Create_GroupName
-            @Html.TextBoxFor(x => x.Title)
-            @Html.ValidationMessageFor(x => x.Title)
-        </label>
+    <div class="mb-3">
+        @Html.LabelFor(x => x.Title, @Surveys.SurveyGroup_Create_GroupName, new { @class = "form-label" })
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control form-control-sm" })
+        @Html.ValidationMessageFor(x => x.Title)
     </div>
-    <div class="actions">
-        <button class="save-button" type="submit">@Surveys.Save</button>
-    </div>
+    <button type="submit" class="btn btn-primary">@Surveys.Save</button>
 </form>
