@@ -1,4 +1,6 @@
-﻿@inject WebPortalEverthing.Services.AuthService AuthService
+﻿@using Enums.Users
+@using WebPortalEverthing.Localizations
+@inject WebPortalEverthing.Services.AuthService AuthService
 
 <!DOCTYPE html>
 <html>
@@ -29,11 +31,55 @@
                     surveys
                 </div>
                 <div class="site-title-name">
-                    сервис опросов и тестов
+                    @Surveys.Surveys_Site_Name
                 </div>
             </div>
         </div>
         <div class="profile-block">
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between menu-header">
+                <ul class="d-flex">
+                    <li class="nav-item m-2">
+                        <a class="nav-link text-dark login-link" asp-area="" asp-controller="Surveys" asp-action="Index">@Surveys.Surveys_HomePage</a>
+                    </li>
+                    @if (!User.Identity?.IsAuthenticated ?? false)
+                    {
+                        <li class="nav-item m-2">
+                            <a class="nav-link text-dark login-link" asp-area="" asp-controller="Auth" asp-action="Login">@Surveys.Surveys_Login</a>
+                        </li>
+                        <li class="nav-item m-2">
+                            <a class="nav-link text-dark registration-link" asp-area="" asp-controller="Auth" asp-action="Register">@Surveys.Surveys_Registration</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item m-2">
+                            <a class="nav-link text-dark logout-link" asp-area="" asp-controller="Auth" asp-action="Logout">@Surveys.Surveys_Logout</a>
+                        </li>
+                    }
+                    <li class="vertical m-2"></li>
+                    @if (AuthService.IsAdmin())
+                    {
+                        <li class="nav-item m-2">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Users">@Surveys.Surveys_Users</a>
+                        </li>
+                        <li class="nav-item m-2">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Notification" asp-action="Notify">@Surveys.Surveys_Notification</a>
+                        </li>
+                        <li class="vertical m-2"></li>
+                    }
+                    @if (User.Identity?.IsAuthenticated ?? false)
+                    {
+                        <a class="nav-link text-dark m-2" href="/Surveys/UpdateLocale?language=@Language.Ru">Ру</a>
+                        <a class="nav-link text-dark m-2" href="/Surveys/UpdateLocale?language=@Language.En">En</a>
+                    }
+                    else
+                    {
+                        <a class="nav-link text-dark unauth-lang m-2" href="#" data-lang="@Language.Ru">Ру</a>
+                        <a class="nav-link text-dark unauth-lang m-2" href="#" data-lang="@Language.En">En</a>
+                    }
+                    <div class="vertical m-2"></div>
+                </ul>
+            </div>
             <div>
                 @AuthService.GetName()
             </div>
@@ -45,11 +91,11 @@
     <div class="menu-and-content">
         <div class="menu-left">
             <ul>
-                <li><a class="button" href="/SurveyGroup">Группы опросов</a></li>
-                <li><a class="button" href="/Surveys/SurveysAll">Опросы</a></li>
-                <li><a class="button" href="#">Тесты</a></li>
-                <li><a class="button" href="#">Статистика</a></li>
-                <li><a class="button" href="/Documents">Документы</a></li>
+                <li><a class="button" href="/SurveyGroup">@Surveys.Surveys_Menu_Survey_Groups</a></li>
+                <li><a class="button" href="/Surveys/SurveysAll">@Surveys.Surveys_Menu_Surveys</a></li>
+                <li><a class="button" href="#">@Surveys.Surveys_Menu_Tests</a></li>
+                <li><a class="button" href="#">@Surveys.Surveys_Menu_Statistics</a></li>
+                <li><a class="button" href="/Documents">@Surveys.Surveys_Menu_Documents</a></li>
             </ul>
         </div>
         <div class="main-content">

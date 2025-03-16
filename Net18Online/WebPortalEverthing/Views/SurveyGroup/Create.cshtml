@@ -1,4 +1,5 @@
-﻿@using WebPortalEverthing.Models.Surveys
+﻿@using WebPortalEverthing.Localizations
+@using WebPortalEverthing.Models.Surveys
 
 @model SurveyGroupCreateViewModel
 
@@ -7,17 +8,17 @@
 }
 
 <div class="main-content-title">
-    <span>Создание новой группы опросов</span>
+    <span>@Surveys.SurveyGroup_Create_Name</span>
 </div>
 <form class="new-survey-group" method="post">
     <div>
         <label>
-            Наименование группы
+            @Surveys.SurveyGroup_Create_GroupName
             @Html.TextBoxFor(x => x.Title)
             @Html.ValidationMessageFor(x => x.Title)
         </label>
     </div>
     <div class="actions">
-        <button class="save-button" type="submit">Сохранить</button>
+        <button class="save-button" type="submit">@Surveys.Save</button>
     </div>
 </form>

@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using WebPortalEverthing.Models.Surveys;
 using Everything.Data.Interface.Models.Surveys;
 using Everything.Data.Repositories.Surveys;
-using Everything.Data.Interface.Enums;
 using Enums.Users;
 using WebPortalEverthing.Controllers.AuthAttributes;
 using WebPortalEverthing.Services;
+using Everything.Data.Repositories;
+using WebPortalEverthing.Localizations;
 
 namespace WebPortalEverthing.Controllers
 {
@@ -17,14 +18,25 @@ namespace WebPortalEverthing.Controllers
         private ISurveysRepositoryReal _surveysRepository;
         private IQuestionRepositoryReal _questionRepository;
         private AuthService _authService;
+        private IUserRepositryReal _userRepositryReal;
 
-        public SurveysController(ISurveyGroupRepositoryReal surveyGroupRepository, IStatusRepositoryReal statusRepository, ISurveysRepositoryReal surveysRepository, AuthService authService, IQuestionRepositoryReal questionRepository)
+        public SurveysController(ISurveyGroupRepositoryReal surveyGroupRepository, IStatusRepositoryReal statusRepository, ISurveysRepositoryReal surveysRepository, AuthService authService, IQuestionRepositoryReal questionRepository, IUserRepositryReal userRepositryReal)
         {
             _statusRepository = statusRepository;
             _surveyGroupRepository = surveyGroupRepository;
             _surveysRepository = surveysRepository;
             _authService = authService;
             _questionRepository = questionRepository;
+            _userRepositryReal = userRepositryReal;
+        }
+
+        [IsAuthenticated]
+        public IActionResult UpdateLocale(Language language)
+        {
+            var userId = _authService.GetUserId()!.Value;
+            _userRepositryReal.UpdateLocal(userId, language);
+
+            return RedirectToAction(nameof(Index), nameof(Surveys));
         }
 
         public ActionResult Index()

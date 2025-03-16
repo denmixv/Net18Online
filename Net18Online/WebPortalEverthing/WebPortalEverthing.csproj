@@ -53,6 +53,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Cake.resx</DependentUpon>
     </Compile>
+	  <Compile Update="Localizations\Surveys.En.Designer.cs">
+	    <DependentUpon>Surveys.En.resx</DependentUpon>
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	  <Compile Update="Localizations\Surveys.Designer.cs">
+	    <DependentUpon>Surveys.resx</DependentUpon>
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	  </Compile>
     <Compile Update="Localizations\LoadStuffs.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -109,6 +119,14 @@
 	  <EmbeddedResource Update="Localizations\Cake.resx">
 		  <Generator>PublicResXFileCodeGenerator</Generator>
 		  <LastGenOutput>Cake.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Localizations\Surveys.En.resx">
+	    <LastGenOutput>Surveys.En.Designer.cs</LastGenOutput>
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Localizations\Surveys.resx">
+	    <LastGenOutput>Surveys.Designer.cs</LastGenOutput>
+	    <Generator>PublicResXFileCodeGenerator</Generator>
 	  </EmbeddedResource>
 	  <EmbeddedResource Update="Localizations\LoadStuffs.resx">
 		  <Generator>PublicResXFileCodeGenerator</Generator>

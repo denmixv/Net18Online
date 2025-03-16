@@ -1,4 +1,5 @@
-﻿@using WebPortalEverthing.Models.Surveys
+﻿@using WebPortalEverthing.Localizations
+@using WebPortalEverthing.Models.Surveys
 
 @{
     Layout = "~/Views/Shared/_LayoutSurveys.cshtml";
@@ -7,10 +8,10 @@
 @model List<SurveyGroupViewModel>
 
 <div class="main-content-title">
-    Группы опросов
+    @Surveys.SurveyGroup_Index_Name
 </div>
 <div>
-    <a class="btn btn-sm btn-success" asp-controller="SurveyGroup" asp-action="Create">Создать новую группу</a>
+    <a class="btn btn-sm btn-success" asp-controller="SurveyGroup" asp-action="Create">@Surveys.SurveyGroup_Index_Create</a>
 </div>
 <div class="survey-group-page">
     @foreach (var group in Model)
@@ -20,17 +21,17 @@
                 @group.Title
             </div>
             <div>
-                создал: @(group.СreatorUser?.Login)
+                @Surveys.SurveyGroup_Index_Creator: @(group.СreatorUser?.Login)
             </div>
             <div>
                 <hr />
             </div>
             <div class="actions d-flex">
                 <div class="mx-1">
-                    <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@group.Id">Редактировать</a>
+                    <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@group.Id">@Surveys.Edit</a>
                 </div>
                 <div class="mx-1">
-                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@group.Id">Удалить</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@group.Id">@Surveys.Delete</a>
                 </div>
             </div>
         </div>

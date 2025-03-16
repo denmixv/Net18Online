@@ -117,52 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Anime_Link_Text" xml:space="preserve">
-    <value>Here</value>
+  <data name="Surveys_HomePage" xml:space="preserve">
+    <value>Главная</value>
   </data>
-  <data name="Home_AnimeGirlDesc" xml:space="preserve">
-    <value>If wana see anime girl, you can do it</value>
+  <data name="Surveys_Login" xml:space="preserve">
+    <value>Войти</value>
   </data>
-  <data name="Home_Greatings" xml:space="preserve">
-    <value>Hi</value>
+  <data name="Surveys_Logout" xml:space="preserve">
+    <value>Выйти</value>
   </data>
-  <data name="Home_Guest" xml:space="preserve">
-    <value>Guest</value>
+  <data name="Surveys_Registration" xml:space="preserve">
+    <value>Зарегестироваться</value>
   </data>
-  <data name="Home_HomePage" xml:space="preserve">
-    <value>Home</value>
+  <data name="Surveys_Users" xml:space="preserve">
+    <value>Пользователи</value>
   </data>
-  <data name="Home_Login" xml:space="preserve">
-    <value>Login</value>
+  <data name="Surveys_Notification" xml:space="preserve">
+    <value>Уведомления</value>
   </data>
-  <data name="Home_Logout" xml:space="preserve">
-    <value>Logout</value>
+  <data name="Surveys_Site_Name" xml:space="preserve">
+    <value>сервис опросов и тестов</value>
   </data>
-  <data name="Home_Registration" xml:space="preserve">
-    <value>Registration</value>
+  <data name="Surveys_Menu_Survey_Groups" xml:space="preserve">
+    <value>Группы опросов</value>
   </data>
-  <data name="Home_Users" xml:space="preserve">
-    <value>Users</value>
+  <data name="Surveys_Menu_Surveys" xml:space="preserve">
+    <value>Опросы</value>
   </data>
-  <data name="Home_CoffeShopDesc" xml:space="preserve">
-    <value>If you want to order coffee and everything that comes with it, then you</value>
+  <data name="Surveys_Menu_Tests" xml:space="preserve">
+    <value>Тесты</value>
   </data>
-  <data name="Coffe_Link_Text" xml:space="preserve">
-    <value>Here</value>
+  <data name="Surveys_Menu_Statistics" xml:space="preserve">
+    <value>Статистика</value>
   </data>
-  <data name="Cake_Link_Text" xml:space="preserve">
-    <value>For the cakes</value>
+  <data name="Surveys_Menu_Documents" xml:space="preserve">
+    <value>Документы</value>
   </data>
-  <data name="Home_MoviePosterDesc" xml:space="preserve">
-    <value>Don't know what to watch on the weekend? Then this is the place for</value>
+  <data name="Surveys_Index_Name" xml:space="preserve">
+    <value>Главная страница</value>
   </data>
-  <data name="MoviePoster_Link_Text" xml:space="preserve">
-    <value>you</value>
+  <data name="SurveyGroup_Index_Name" xml:space="preserve">
+    <value>Группы опросов</value>
   </data>
-  <data name="Home_Notification" xml:space="preserve">
-    <value>Notification</value>
+  <data name="SurveyGroup_Index_Create" xml:space="preserve">
+    <value>Создать новую группу</value>
   </data>
-  <data name="Surveys_Link_Text" xml:space="preserve">
-    <value>Create and take a survey</value>
+  <data name="Edit" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="SurveyGroup_Index_Creator" xml:space="preserve">
+    <value>создал</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="SurveyGroup_Create_GroupName" xml:space="preserve">
+    <value>Наименование группы</value>
+  </data>
+  <data name="SurveyGroup_Create_Name" xml:space="preserve">
+    <value>Создание новой группы опросов</value>
   </data>
 </root>

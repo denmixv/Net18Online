@@ -162,4 +162,7 @@
   <data name="Home_Notification" xml:space="preserve">
     <value>Уведомления</value>
   </data>
+  <data name="Surveys_Link_Text" xml:space="preserve">
+    <value>Создать и пройти опрос</value>
+  </data>
 </root>

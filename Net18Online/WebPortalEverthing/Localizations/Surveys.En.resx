@@ -117,52 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Anime_Link_Text" xml:space="preserve">
-    <value>Here</value>
-  </data>
-  <data name="Home_AnimeGirlDesc" xml:space="preserve">
-    <value>If wana see anime girl, you can do it</value>
-  </data>
-  <data name="Home_Greatings" xml:space="preserve">
-    <value>Hi</value>
-  </data>
-  <data name="Home_Guest" xml:space="preserve">
-    <value>Guest</value>
-  </data>
-  <data name="Home_HomePage" xml:space="preserve">
+  <data name="Surveys_HomePage" xml:space="preserve">
     <value>Home</value>
   </data>
-  <data name="Home_Login" xml:space="preserve">
+  <data name="Surveys_Login" xml:space="preserve">
     <value>Login</value>
   </data>
-  <data name="Home_Logout" xml:space="preserve">
+  <data name="Surveys_Logout" xml:space="preserve">
     <value>Logout</value>
   </data>
-  <data name="Home_Registration" xml:space="preserve">
+  <data name="Surveys_Registration" xml:space="preserve">
     <value>Registration</value>
   </data>
-  <data name="Home_Users" xml:space="preserve">
+  <data name="Surveys_Users" xml:space="preserve">
     <value>Users</value>
   </data>
-  <data name="Home_CoffeShopDesc" xml:space="preserve">
-    <value>If you want to order coffee and everything that comes with it, then you</value>
-  </data>
-  <data name="Coffe_Link_Text" xml:space="preserve">
-    <value>Here</value>
-  </data>
-  <data name="Cake_Link_Text" xml:space="preserve">
-    <value>For the cakes</value>
-  </data>
-  <data name="Home_MoviePosterDesc" xml:space="preserve">
-    <value>Don't know what to watch on the weekend? Then this is the place for</value>
-  </data>
-  <data name="MoviePoster_Link_Text" xml:space="preserve">
-    <value>you</value>
-  </data>
-  <data name="Home_Notification" xml:space="preserve">
+  <data name="Surveys_Notification" xml:space="preserve">
     <value>Notification</value>
   </data>
-  <data name="Surveys_Link_Text" xml:space="preserve">
-    <value>Create and take a survey</value>
+  <data name="Surveys_Site_Name" xml:space="preserve">
+    <value>survey and test service</value>
+  </data>
+  <data name="Surveys_Menu_Survey_Groups" xml:space="preserve">
+    <value>Survey Groups</value>
+  </data>
+  <data name="Surveys_Menu_Surveys" xml:space="preserve">
+    <value>Surveys</value>
+  </data>
+  <data name="Surveys_Menu_Tests" xml:space="preserve">
+    <value>Tests</value>
+  </data>
+  <data name="Surveys_Menu_Statistics" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="Surveys_Menu_Documents" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="Surveys_Index_Name" xml:space="preserve">
+    <value>Home page</value>
+  </data>
+  <data name="SurveyGroup_Index_Name" xml:space="preserve">
+    <value>Survey Groups</value>
+  </data>
+  <data name="SurveyGroup_Index_Create" xml:space="preserve">
+    <value>Create new group</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="SurveyGroup_Index_Creator" xml:space="preserve">
+    <value>Creator</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SurveyGroup_Create_GroupName" xml:space="preserve">
+    <value>Group name</value>
+  </data>
+  <data name="SurveyGroup_Create_Name" xml:space="preserve">
+    <value>Creating new survey group</value>
   </data>
 </root>

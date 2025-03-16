@@ -194,5 +194,14 @@ namespace WebPortalEverthing.Localizations {
                 return ResourceManager.GetString("MoviePoster_Link_Text", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Создать и пройти опрос.
+        /// </summary>
+        public static string Surveys_Link_Text {
+            get {
+                return ResourceManager.GetString("Surveys_Link_Text", resourceCulture);
+            }
+        }
     }
 }
