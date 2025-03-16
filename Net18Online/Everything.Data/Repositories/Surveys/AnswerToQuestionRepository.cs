@@ -44,6 +44,7 @@ namespace Everything.Data.Repositories.Surveys
 
             return _dbSet
                 .Where(x => x.TakingUserSurvey.Id == takingId
+                    && x.Question.IsRequired
                     &&  (       (answerTypes.Contains(x.Question.AnswerType) && string.IsNullOrEmpty(x.Text))
                             ||  (!answerTypes.Contains(x.Question.AnswerType))
                         )

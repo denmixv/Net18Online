@@ -61,5 +61,14 @@ namespace Everything.Data.Repositories.Surveys
 
             _webDbContext.SaveChanges();
         }
+
+        public void SetStatus(int id, int idStatus)
+        {
+            var survey = Get(id);
+
+            survey.IdStatus = idStatus;
+
+            _webDbContext.SaveChanges();
+        }
     }
 }

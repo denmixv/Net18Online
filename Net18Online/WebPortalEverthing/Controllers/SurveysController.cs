@@ -107,7 +107,7 @@ namespace WebPortalEverthing.Controllers
                 Id = survey.Id,
                 Status = GetSurveyStatusViewModelFromData(survey),
                 Title = survey.Title,
-                Action = GetSurveyActionModelFromData(survey)
+                Actions = GetSurveyActionModelFromData(survey)
             };
         }
 
@@ -125,17 +125,25 @@ namespace WebPortalEverthing.Controllers
             };
         }
 
-        private SurveyActionViewModel? GetSurveyActionModelFromData(ISurveyData survey)
+        private List<SurveyActionViewModel> GetSurveyActionModelFromData(ISurveyData survey)
         {
+            var actions = new List<SurveyActionViewModel>();
+
             if (!_authService.IsAuthenticated())
             {
-                return null;
+                return actions;
             }
 
             var buttonEdit = new SurveyActionViewModel()
             {
                 Title = "Редактировать",
                 Href = $"Edit?idSurvey={survey.Id}"
+            };
+
+            var buttonApprove = new SurveyActionViewModel()
+            {
+                Title = "Утвердить",
+                Href = $"Approve/{survey.Id}"
             };
 
             var buttonTakeSurvey = new SurveyActionViewModel()
@@ -145,12 +153,18 @@ namespace WebPortalEverthing.Controllers
             };
 
             // Хак с id-шниками статусов, позже будет сделано правильно
-            return survey.IdStatus switch
+            switch (survey.IdStatus)
             {
-                1 => buttonEdit,
-                2 => buttonTakeSurvey,
-                _ => null
+                case 1:
+                    actions.Add(buttonEdit);
+                    actions.Add(buttonApprove);
+                    break;
+                case 2:
+                    actions.Add(buttonTakeSurvey);
+                    break;
             };
+
+            return actions;
         }
 
         private void GenerateDefaultStatuses()
@@ -423,6 +437,16 @@ namespace WebPortalEverthing.Controllers
 
             _surveysRepository.UpdateTitle(surveyCreate.Id, surveyCreate.Title);
             _surveysRepository.UpdateDescription(surveyCreate.Id, surveyCreate.Description);
+
+            return RedirectToAction(nameof(SurveysAll));
+        }
+
+        [HasRole(Role.SurveysCreatorOrEditor)]
+        public IActionResult Approve(int id)
+        {
+            var survey = _surveysRepository.GetWithGroupAndQuestions(id);
+
+            _surveysRepository.SetStatus(id, 2);
 
             return RedirectToAction(nameof(SurveysAll));
         }

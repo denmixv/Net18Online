@@ -48,26 +48,20 @@
                 @Html.HiddenFor(x => x.Id)
                 @Html.HiddenFor(x => x.SurveyGroup.Id)
             </div>
-            <div>
-                <label>
-                    Группа:
-                    @Html.HiddenFor(x => x.SurveyGroup.Title)
-                    @Html.DisplayTextFor(x => x.SurveyGroup.Title)
-                </label>
+            <div class="mb-3">
+                @Html.LabelFor(x => x.SurveyGroup.Title, "Группа", new { @class = "form-label" })
+                @Html.TextBoxFor(x => x.SurveyGroup.Title, new { @class = "form-control form-control-sm", @disabled = true })
+                @Html.HiddenFor(x => x.SurveyGroup.Title)
             </div>
-            <div>
-                <label>
-                    Название опроса
-                    @Html.TextBoxFor(x => x.Title)
-                    @Html.ValidationMessageFor(x => x.Title)
-                </label>
+            <div class="mb-3">
+                @Html.LabelFor(x => x.Title, "Название опроса", new { @class = "form-label" })
+                @Html.TextBoxFor(x => x.Title, new { @class = "form-control form-control-sm" })
+                @Html.ValidationMessageFor(x => x.Title)
             </div>
-            <div>
-                <label>
-                    Описание
-                    @Html.TextAreaFor(x => x.Description)
-                    @Html.ValidationMessageFor(x => x.Description)
-                </label>
+            <div class="mb-3">
+                @Html.LabelFor(x => x.Description, "Описание", new { @class = "form-label" })
+                @Html.TextAreaFor(x => x.Description, new { @class = "form-control form-control-sm" })
+                @Html.ValidationMessageFor(x => x.Description)
             </div>
         </div>
         <div class="questions">

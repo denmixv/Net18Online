@@ -54,9 +54,11 @@
                             </div>
                         </div>
                         <div class="survey-actions">
-                            @if (survey.Action is not null)
+                            @foreach (var action in survey.Actions)
                             {
-                                <a class="action-take" href="@survey.Action.Href">@survey.Action.Title</a>
+                                <div class="mx-1">
+                                    <a class="action-take" href="@action.Href">@action.Title</a>
+                                </div>
                             }
                         </div>
                     </div>

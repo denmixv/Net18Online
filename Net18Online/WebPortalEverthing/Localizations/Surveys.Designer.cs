@@ -320,5 +320,14 @@ namespace WebPortalEverthing.Localizations {
                 return ResourceManager.GetString("Surveys_Users", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вопросов нет.
+        /// </summary>
+        public static string TakingSurvey_Index_Table_Empty {
+            get {
+                return ResourceManager.GetString("TakingSurvey_Index_Table_Empty", resourceCulture);
+            }
+        }
     }
 }
