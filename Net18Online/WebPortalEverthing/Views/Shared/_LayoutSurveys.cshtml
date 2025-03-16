@@ -1,6 +1,8 @@
 ﻿@using Enums.Users
 @using WebPortalEverthing.Localizations
-@inject WebPortalEverthing.Services.AuthService AuthService
+@using WebPortalEverthing.Services
+@inject AuthService AuthService
+@inject UserService UserService
 
 <!DOCTYPE html>
 <html>
@@ -44,16 +46,16 @@
                     @if (!User.Identity?.IsAuthenticated ?? false)
                     {
                         <li class="nav-item m-2">
-                            <a class="nav-link text-dark login-link" asp-area="" asp-controller="Auth" asp-action="Login">@Surveys.Surveys_Login</a>
+                            <a class="nav-link text-dark login-link" asp-area="" asp-controller="SurveysAuth" asp-action="Login">@Surveys.Surveys_Login</a>
                         </li>
                         <li class="nav-item m-2">
-                            <a class="nav-link text-dark registration-link" asp-area="" asp-controller="Auth" asp-action="Register">@Surveys.Surveys_Registration</a>
+                            <a class="nav-link text-dark registration-link" asp-area="" asp-controller="SurveysAuth" asp-action="Register">@Surveys.Surveys_Registration</a>
                         </li>
                     }
                     else
                     {
                         <li class="nav-item m-2">
-                            <a class="nav-link text-dark logout-link" asp-area="" asp-controller="Auth" asp-action="Logout">@Surveys.Surveys_Logout</a>
+                            <a class="nav-link text-dark logout-link" asp-area="" asp-controller="SurveysAuth" asp-action="Logout">@Surveys.Surveys_Logout</a>
                         </li>
                     }
                     <li class="vertical m-2"></li>
@@ -67,7 +69,7 @@
                         </li>
                         <li class="vertical m-2"></li>
                     }
-                    @if (User.Identity?.IsAuthenticated ?? false)
+                    @if (AuthService.IsAuthenticated())
                     {
                         <a class="nav-link text-dark m-2" href="/Surveys/UpdateLocale?language=@Language.Ru">Ру</a>
                         <a class="nav-link text-dark m-2" href="/Surveys/UpdateLocale?language=@Language.En">En</a>
@@ -77,15 +79,22 @@
                         <a class="nav-link text-dark unauth-lang m-2" href="#" data-lang="@Language.Ru">Ру</a>
                         <a class="nav-link text-dark unauth-lang m-2" href="#" data-lang="@Language.En">En</a>
                     }
-                    <div class="vertical m-2"></div>
                 </ul>
             </div>
-            <div>
-                @AuthService.GetName()
-            </div>
-            <div>
-                <img class="profile-image" src="~/images/Surveys/avatar-default.jpg" alt="" />
-            </div>
+            @if (AuthService.IsAuthenticated())
+            {
+                <div>
+                    <div class="vertical m-2"></div>
+                </div>
+                <div>
+                    <img class="profile-image" src="@UserService.GetAvatar()" alt="" />
+                </div>
+                <a href="/Surveys/Profile">
+                    <div class="m-2">
+                        @AuthService.GetName()
+                    </div>
+                </a>
+            }
         </div>
     </header>
     <div class="menu-and-content">
@@ -95,7 +104,10 @@
                 <li><a class="button" href="/Surveys/SurveysAll">@Surveys.Surveys_Menu_Surveys</a></li>
                 <li><a class="button" href="#">@Surveys.Surveys_Menu_Tests</a></li>
                 <li><a class="button" href="#">@Surveys.Surveys_Menu_Statistics</a></li>
-                <li><a class="button" href="/Documents">@Surveys.Surveys_Menu_Documents</a></li>
+                @if (AuthService.IsAuthenticated())
+                {
+                    <li><a class="button" href="/Documents">@Surveys.Surveys_Menu_Documents</a></li>
+                }
             </ul>
         </div>
         <div class="main-content">

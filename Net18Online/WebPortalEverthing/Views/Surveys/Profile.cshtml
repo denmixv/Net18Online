@@ -1,0 +1,44 @@
+﻿@using WebPortalEverthing.Localizations
+@using WebPortalEverthing.Models.Surveys.Profile
+@model ProfileViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutSurveys.cshtml";
+}
+
+<div class="main-content-title">
+    <span>@Surveys.Surveys_Profile_Name</span>
+</div>
+
+<div class="profile">
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            @Html.LabelFor(x => x.UserName, new { @class = "form-label" })
+            @Html.TextBoxFor(x => x.UserName, new { @class = "form-control form-control-sm", @disabled = true })
+            @Html.HiddenFor(x => x.UserName)
+            @Html.ValidationMessageFor(x => x.UserName)
+        </div>
+        <div class="mb-3">
+            @Html.LabelFor(x => x.Age, new { @class = "form-label" })
+            @Html.TextBoxFor(x => x.Age, new { @class = "form-control form-control-sm", @disabled = true })
+            @Html.HiddenFor(x => x.Age)
+            @Html.ValidationMessageFor(x => x.Age)
+        </div>
+        <div class="mb-3">
+            @Html.LabelFor(x => x.Coins, new { @class = "form-label" })
+            @Html.TextBoxFor(x => x.Coins, new { @type="number", @class = "form-control form-control-sm", @disabled = true })
+            @Html.HiddenFor(x => x.Coins)
+        </div>
+        <div class="mb-3">
+            @Html.LabelFor(x => x.AvatarUrl, new { @class = "form-label" })
+            @Html.HiddenFor(x => x.AvatarUrl)
+            <img class="avatar" src="@Model.AvatarUrl" />
+        </div>
+        <div class="mb-3">
+            @Html.LabelFor(x => x.NewAvatarFile, new { @class = "form-label" })
+            <input class="form-control form-control-sm" id="NewAvatarFile" name="NewAvatarFile" type="file">
+            @Html.ValidationMessageFor(x => x.NewAvatarFile)
+        </div>
+        <button type="submit" class="btn btn-primary">Обновить</button>
+    </form>
+</div>

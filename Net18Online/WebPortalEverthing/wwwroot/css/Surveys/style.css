@@ -24,9 +24,10 @@ header .logo-and-title .site-title {
 }
 
 .profile-block {
-	display: flex;
-	align-items: center;
-	margin-right: 3px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin-right: 3px;
 }
 
     .profile-block .menu-header {
@@ -91,7 +92,7 @@ header .logo img {
 }
 
 .main-content-title {
-    margin: 3px;
+    margin: 5px 0px 10px 0px;
     font-size: 1.3rem;
     font-weight: bold;
 }

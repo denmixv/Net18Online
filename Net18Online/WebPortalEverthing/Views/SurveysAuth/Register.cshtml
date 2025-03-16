@@ -1,0 +1,30 @@
+﻿@using WebPortalEverthing.Localizations
+@using WebPortalEverthing.Models.Auth
+@model RegisterUserViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutSurveys.cshtml";
+}
+
+<div class="main-content-title">
+    <span>@Surveys.Register_Name</span>
+</div>
+
+<form method="post">
+    <div class="mb-3">
+        @Html.LabelFor(x => x.UserName, new { @class = "form-label" })
+        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control form-control-sm" })
+        @Html.ValidationMessageFor(x => x.UserName)
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(x => x.Password, new { @class = "form-label" })
+        @Html.TextBoxFor(x => x.Password, new { @type = "password", @class = "form-control form-control-sm" })
+        @Html.ValidationMessageFor(x => x.Password)
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(x => x.Age, new { @class = "form-label" })
+        @Html.TextBoxFor(x => x.Age, new { @type = "number", @class = "form-control form-control-sm" })
+        @Html.ValidationMessageFor(x => x.Password)
+    </div>
+    <button type="submit" class="btn btn-primary">Регистрация</button>
+</form>

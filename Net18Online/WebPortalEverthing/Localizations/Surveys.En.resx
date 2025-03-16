@@ -180,4 +180,16 @@
   <data name="SurveyGroup_Create_Name" xml:space="preserve">
     <value>Creating new survey group</value>
   </data>
+  <data name="Surveys_Register_Name" xml:space="preserve">
+    <value>New user registration</value>
+  </data>
+  <data name="Login_Name" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Register_Name" xml:space="preserve">
+    <value>New user registration</value>
+  </data>
+  <data name="Surveys_Profile_Name" xml:space="preserve">
+    <value>User profile</value>
+  </data>
 </root>

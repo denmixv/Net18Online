@@ -8,6 +8,7 @@ using WebPortalEverthing.Controllers.AuthAttributes;
 using WebPortalEverthing.Services;
 using Everything.Data.Repositories;
 using WebPortalEverthing.Localizations;
+using WebPortalEverthing.Models.Surveys.Profile;
 
 namespace WebPortalEverthing.Controllers
 {
@@ -19,8 +20,9 @@ namespace WebPortalEverthing.Controllers
         private IQuestionRepositoryReal _questionRepository;
         private AuthService _authService;
         private IUserRepositryReal _userRepositryReal;
+        private FileProvider _fileProvider;
 
-        public SurveysController(ISurveyGroupRepositoryReal surveyGroupRepository, IStatusRepositoryReal statusRepository, ISurveysRepositoryReal surveysRepository, AuthService authService, IQuestionRepositoryReal questionRepository, IUserRepositryReal userRepositryReal)
+        public SurveysController(ISurveyGroupRepositoryReal surveyGroupRepository, IStatusRepositoryReal statusRepository, ISurveysRepositoryReal surveysRepository, AuthService authService, IQuestionRepositoryReal questionRepository, IUserRepositryReal userRepositryReal, FileProvider fileProvider = null)
         {
             _statusRepository = statusRepository;
             _surveyGroupRepository = surveyGroupRepository;
@@ -28,6 +30,7 @@ namespace WebPortalEverthing.Controllers
             _authService = authService;
             _questionRepository = questionRepository;
             _userRepositryReal = userRepositryReal;
+            _fileProvider = fileProvider;
         }
 
         [IsAuthenticated]
@@ -422,6 +425,60 @@ namespace WebPortalEverthing.Controllers
             _surveysRepository.UpdateDescription(surveyCreate.Id, surveyCreate.Description);
 
             return RedirectToAction(nameof(SurveysAll));
+        }
+
+        [IsAuthenticated]
+        public IActionResult Profile()
+        {
+            var userId = _authService.GetUserId()!.Value;
+            var user = _userRepositryReal.Get(userId);
+
+            var viewModel = new ProfileViewModel
+            {
+                UserName = _authService.GetName()!,
+                Age = user.Age,
+                Coins = user.Coins,
+                AvatarUrl = _userRepositryReal.GetAvatarUrl(userId)
+            };
+
+            return View(viewModel);
+        }
+
+        [IsAuthenticated]
+        [HttpPost]
+        public IActionResult Profile(ProfileViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
+
+            var userId = _authService.GetUserId()!.Value;
+
+            if (viewModel.NewAvatarFile is null)
+            {
+                ModelState.AddModelError(
+                    nameof(ProfileViewModel.NewAvatarFile),
+                    "Файл для загрузки не выбран");
+
+                return View(viewModel);
+            }
+
+            var newFileName = _fileProvider.GetNewFileName(viewModel.NewAvatarFile.FileName);
+
+            if (!_fileProvider.Save(viewModel.NewAvatarFile, newFileName))
+            {
+                ModelState.AddModelError(
+                    nameof(ProfileViewModel.NewAvatarFile),
+                    "Не удалось сохранить файл, обратитесь к администратору портала");
+
+                return View(viewModel);
+            }
+
+            var avatarUrl = $"/files/{newFileName}";
+            _userRepositryReal.UpdateAvatarUrl(userId, avatarUrl);
+
+            return RedirectToAction(nameof(Profile));
         }
     }
 }

@@ -79,6 +79,24 @@ namespace WebPortalEverthing.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Вход.
+        /// </summary>
+        public static string Login_Name {
+            get {
+                return ResourceManager.GetString("Login_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Регистрация нового пользователя.
+        /// </summary>
+        public static string Register_Name {
+            get {
+                return ResourceManager.GetString("Register_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Сохранить.
         /// </summary>
         public static string Save {
@@ -219,6 +237,15 @@ namespace WebPortalEverthing.Localizations {
         public static string Surveys_Notification {
             get {
                 return ResourceManager.GetString("Surveys_Notification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Профиль пользователя.
+        /// </summary>
+        public static string Surveys_Profile_Name {
+            get {
+                return ResourceManager.GetString("Surveys_Profile_Name", resourceCulture);
             }
         }
         

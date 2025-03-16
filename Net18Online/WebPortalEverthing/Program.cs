@@ -23,8 +23,8 @@ builder.Services
     .AddAuthentication(AuthService.AUTH_TYPE_KEY)
     .AddCookie(AuthService.AUTH_TYPE_KEY, config =>
     {
-        config.LoginPath = "/Auth/Login";
-        config.AccessDeniedPath = "/Home/Forbidden";
+        config.LoginPath = "/SurveysAuth/Login";
+        config.AccessDeniedPath = "/SurveysAuth/Forbidden";
     });
 
 // Add services to the container.
@@ -44,13 +44,13 @@ builder.Services.AddSingleton<IGameLifeRepository, GameLifeRepository>();
 var registrationHelper = new RegistrationHelper();
 registrationHelper.AutoRegisterRepositories(builder.Services);
 
-builder.Services
-    .AddAuthentication(LoadAuthService.AUTH_TYPE_KEY)
-    .AddCookie(LoadAuthService.AUTH_TYPE_KEY, config =>
-    {
-        config.LoginPath = "/LoadAuth/LoginLoadUserView";
-        config.AccessDeniedPath = "/Home/Forbidden";
-    });
+//builder.Services
+//    .AddAuthentication(LoadAuthService.AUTH_TYPE_KEY)
+//    .AddCookie(LoadAuthService.AUTH_TYPE_KEY, config =>
+//    {
+//        config.LoginPath = "/LoadAuth/LoginLoadUserView";
+//        config.AccessDeniedPath = "/Home/Forbidden";
+//    });
 
 builder.Services.AddScoped<HelperForValidatingCake>();
 builder.Services.AddScoped<TextProvider>();
