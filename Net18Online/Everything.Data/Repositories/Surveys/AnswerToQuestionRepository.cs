@@ -1,4 +1,5 @@
-﻿using Everything.Data.Interface.Enums;
+﻿using Everything.Data.DataLayerModels;
+using Everything.Data.Interface.Enums;
 using Everything.Data.Interface.Repositories;
 using Everything.Data.Models.Surveys;
 
@@ -6,6 +7,7 @@ namespace Everything.Data.Repositories.Surveys
 {
     public interface IAnswerToQuestionRepositoryReal : IAnswerToQuestionRepository<AnswerToQuestionData>
     {
+        List<QuestionsWithAnswers> GetAnswersToQuestionsBySurvey(int idSurvey);
     }
 
     public class AnswerToQuestionRepository : BaseRepository<AnswerToQuestionData>, IAnswerToQuestionRepositoryReal
@@ -50,6 +52,19 @@ namespace Everything.Data.Repositories.Surveys
                         )
                     )
                 .Select(x => x.Id)
+                .ToList();
+        }
+
+        public List<QuestionsWithAnswers> GetAnswersToQuestionsBySurvey(int idSurvey)
+        {
+            return _dbSet
+                .Where(x => x.TakingUserSurvey.Survey.Id == idSurvey
+                    && x.TakingUserSurvey.CompletionStatus == Enums.Surveys.SurveyCompletionStatus.Completed)
+                .Select(x => new QuestionsWithAnswers()
+                {
+                    IdQuestion = x.Question.Id,
+                    Text = x.Text
+                })
                 .ToList();
         }
     }

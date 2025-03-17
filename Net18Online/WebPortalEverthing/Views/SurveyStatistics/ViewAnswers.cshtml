@@ -1,0 +1,38 @@
+﻿@using WebPortalEverthing.Localizations
+@using WebPortalEverthing.Models.Surveys
+
+@{
+    Layout = "~/Views/Shared/_LayoutSurveys.cshtml";
+}
+
+@model SurveyStatisticsViewAnswerViewModel
+
+<div class="main-content-title">
+    @Surveys.SurveyStatistics_ViewAnswers_Name
+</div>
+
+<div class="round-border">
+    <div class="mb-3">
+        @Html.LabelFor(x => x.SurveyName, "Название опроса", new { @class = "form-label" })
+        @Html.TextBoxFor(x => x.SurveyName, new { @class = "form-control form-control-sm", @disabled = true })
+        @Html.HiddenFor(x => x.SurveyName)
+    </div>
+</div>
+<div class="list-group">
+    @foreach (var question in Model.Questions)
+    {
+        <div class="list-group-item">
+            <div class="d-flex justify-content-between">
+                <h1 class="list-group-item-heading mb-2"><mark>@question.Title</mark></h1>
+            </div>
+            <ul>
+                @foreach (var text in question.Texts)
+                {
+                    <li class="nav-item">
+                        @text
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+</div>

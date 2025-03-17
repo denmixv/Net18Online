@@ -412,6 +412,15 @@ namespace WebPortalEverthing.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Результаты прохождения опроса.
+        /// </summary>
+        public static string SurveyStatistics_ViewAnswers_Name {
+            get {
+                return ResourceManager.GetString("SurveyStatistics_ViewAnswers_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Тесты.
         /// </summary>
         public static string SurveyTests_Index_Name {
