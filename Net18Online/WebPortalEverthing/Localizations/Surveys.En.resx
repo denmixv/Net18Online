@@ -231,4 +231,16 @@
   <data name="SurveyTests_Index_Name" xml:space="preserve">
     <value>Tests</value>
   </data>
+  <data name="SurveyStatistics_Index_Name" xml:space="preserve">
+    <value>Survey statistics</value>
+  </data>
+  <data name="SurveyStatistics_Index_ViewAnswers" xml:space="preserve">
+    <value>View answers</value>
+  </data>
+  <data name="SurveyStatistics_Index_Completed" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="SurveyStatistics_Index_InProcess" xml:space="preserve">
+    <value>In progress</value>
+  </data>
 </root>

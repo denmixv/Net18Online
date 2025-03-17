@@ -228,4 +228,16 @@
   <data name="SurveyTests_Index_Name" xml:space="preserve">
     <value>Тесты</value>
   </data>
+  <data name="SurveyStatistics_Index_Name" xml:space="preserve">
+    <value>Статистика опросов</value>
+  </data>
+  <data name="SurveyStatistics_Index_ViewAnswers" xml:space="preserve">
+    <value>Посмотреть ответы</value>
+  </data>
+  <data name="SurveyStatistics_Index_Completed" xml:space="preserve">
+    <value>Пройдено</value>
+  </data>
+  <data name="SurveyStatistics_Index_InProcess" xml:space="preserve">
+    <value>В процессе выполнения</value>
+  </data>
 </root>

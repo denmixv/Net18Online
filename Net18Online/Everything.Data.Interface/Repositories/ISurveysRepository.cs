@@ -6,6 +6,7 @@ namespace Everything.Data.Interface.Repositories
         where T : ISurveyData
     {
         T GetWithGroupAndQuestions(int id);
+        List<T> GetWithAnyPassingUsers();
         int CreateSurvey(string title, int groupId, string? description);
         void UpdateTitle(int id, string newTitle);
         void UpdateDescription(int id, string? description);

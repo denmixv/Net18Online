@@ -22,6 +22,14 @@ namespace Everything.Data.Repositories.Surveys
                 .First(x => x.Id == id);
         }
 
+        public List<SurveyData> GetWithAnyPassingUsers()
+        {
+            return _dbSet
+                .Include(x => x.PassingUsers)
+                .Where(x => x.PassingUsers.Any())
+                .ToList();
+        }
+
         public int CreateSurvey(string title, int groupId, string? description)
         {
             var group = _webDbContext

@@ -68,13 +68,13 @@
                     }
                     @if (AuthService.IsAuthenticated())
                     {
-                        <a class="nav-link text-dark m-2" href="/Surveys/UpdateLocale?language=@Language.Ru">Ру</a>
-                        <a class="nav-link text-dark m-2" href="/Surveys/UpdateLocale?language=@Language.En">En</a>
+                        <a class="nav-link text-dark m-2" href="/Surveys/UpdateLocale?language=@Language.Ru">Руc</a>
+                        <a class="nav-link text-dark m-2" href="/Surveys/UpdateLocale?language=@Language.En">Eng</a>
                     }
                     else
                     {
-                        <a class="nav-link text-dark unauth-lang m-2" href="#" data-lang="@Language.Ru">Ру</a>
-                        <a class="nav-link text-dark unauth-lang m-2" href="#" data-lang="@Language.En">En</a>
+                        <a class="nav-link text-dark unauth-lang m-2" href="#" data-lang="@Language.Ru">Руc</a>
+                        <a class="nav-link text-dark unauth-lang m-2" href="#" data-lang="@Language.En">Eng</a>
                     }
                 </ul>
             </div>
@@ -102,7 +102,7 @@
                 <li><a class="button" href="/SurveyTests">@Surveys.Surveys_Menu_Tests</a></li>
                 @if (AuthService.HasRole(Role.SurveysDataAnalyst))
                 {
-                    <li><a class="button" href="#">@Surveys.Surveys_Menu_Statistics</a></li>
+                    <li><a class="button" href="/SurveyStatistics">@Surveys.Surveys_Menu_Statistics</a></li>
                 }
                 @if (AuthService.IsAuthenticated())
                 {

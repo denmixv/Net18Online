@@ -1,0 +1,32 @@
+﻿@using WebPortalEverthing.Localizations
+@using WebPortalEverthing.Models.Surveys
+
+@{
+    Layout = "~/Views/Shared/_LayoutSurveys.cshtml";
+}
+
+@model SurveyStatisticsIndexViewModel
+
+<div class="main-content-title">
+    @Surveys.SurveyStatistics_Index_Name
+</div>
+
+<div class="list-group">
+    @foreach (var survey in Model.Surveys)
+    {
+        <div class="list-group-item">
+            <div class="d-flex justify-content-between">
+                <h1 class="list-group-item-heading mb-2">@survey.Title</h1>
+                <a class="btn btn-sm btn-secondary" href="/SurveyStatistics/ViewAnswer?idSurvey=@survey.Id">@Surveys.SurveyStatistics_Index_ViewAnswers</a>
+            </div>
+            <div>
+                @Surveys.SurveyStatistics_Index_Completed:
+                @survey.CountIsCompleted
+            </div>
+            <div>
+                @Surveys.SurveyStatistics_Index_InProcess:
+                @survey.CountInProcess
+            </div>
+        </div>
+    }
+</div>

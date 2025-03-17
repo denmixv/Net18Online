@@ -376,6 +376,42 @@ namespace WebPortalEverthing.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Пройдено.
+        /// </summary>
+        public static string SurveyStatistics_Index_Completed {
+            get {
+                return ResourceManager.GetString("SurveyStatistics_Index_Completed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to В процессе выполнения.
+        /// </summary>
+        public static string SurveyStatistics_Index_InProcess {
+            get {
+                return ResourceManager.GetString("SurveyStatistics_Index_InProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Статистика опросов.
+        /// </summary>
+        public static string SurveyStatistics_Index_Name {
+            get {
+                return ResourceManager.GetString("SurveyStatistics_Index_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Посмотреть ответы.
+        /// </summary>
+        public static string SurveyStatistics_Index_ViewAnswers {
+            get {
+                return ResourceManager.GetString("SurveyStatistics_Index_ViewAnswers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Тесты.
         /// </summary>
         public static string SurveyTests_Index_Name {
