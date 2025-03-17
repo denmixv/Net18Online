@@ -8,5 +8,6 @@ namespace Everything.Data.Interface.Repositories
         int? ReturnIdLastUncompletedSurvey(int userId, int surveyId);
         int Add(int userId, int surveyId);
         void SetCompleteStatus(int takingId);
+        T GetWithSurvey(int id);
     }
 }

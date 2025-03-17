@@ -1,6 +1,7 @@
 ﻿using Enums.Surveys;
 using Everything.Data.Interface.Repositories;
 using Everything.Data.Models.Surveys;
+using Microsoft.EntityFrameworkCore;
 
 namespace Everything.Data.Repositories.Surveys
 {
@@ -72,6 +73,13 @@ namespace Everything.Data.Repositories.Surveys
             takingData.CompletionStatus = SurveyCompletionStatus.Completed;
 
             _webDbContext.SaveChanges();
+        }
+
+        public TakingUserSurveyData GetWithSurvey(int id)
+        {
+            return _dbSet
+                .Include(x => x.Survey)
+                .First(x => x.Id == id);
         }
     }
 }

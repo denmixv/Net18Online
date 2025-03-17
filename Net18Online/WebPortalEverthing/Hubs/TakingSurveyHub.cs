@@ -1,7 +1,5 @@
-﻿using Everything.Data.Interface.Repositories;
-using Everything.Data.Repositories.Surveys;
+﻿using Everything.Data.Repositories.Surveys;
 using Microsoft.AspNetCore.SignalR;
-using WebPortalEverthing.Controllers;
 using WebPortalEverthing.Services;
 
 namespace WebPortalEverthing.Hubs
@@ -51,10 +49,13 @@ namespace WebPortalEverthing.Hubs
         public void SubmitSurvey(int takingId)
         {
             var unansweredQuestionsIds = _answerToQuestionRepository.GetIdsUnansweredQuestions(takingId);
+            var taking = _takingUserSurveyRepository.GetWithSurvey(takingId);
 
             if (unansweredQuestionsIds.Count == 0)
             {
                 _takingUserSurveyRepository.SetCompleteStatus(takingId);
+                var message = $"Пользователь «{_authService.GetName()}» завершил прохождение опроса «{taking.Survey.Title}»";
+                Clients.Others.Notify(message).Wait();
                 Clients.Caller.RedirectPage("/Surveys/SurveysAll").Wait();
             }
             else
